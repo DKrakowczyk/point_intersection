@@ -48,7 +48,7 @@ def get_intersection_point(A,B,C,D):
     s2_y = D.y - C.y
 
     if(s1_y == 0 and s2_y == 0):
-        print("Linie na siebie nachodzą")
+        #print("Linie na siebie nachodzą")
         return None
     try:
         s = (-s1_y * (A.x - C.x) + s1_x * (A.y - C.y)) / (-s2_x * s1_y + s1_x * s2_y)
@@ -57,8 +57,8 @@ def get_intersection_point(A,B,C,D):
         if (s >= 0 and s <= 1 and t >= 0 and t <= 1):
             intersection_x = round_val(A.x + (t * s1_x))
             intersection_y = round_val(A.y + (t * s1_y))
-            print("Punkt przecięcia w x:", intersection_x)
-            print("Punkt przecięcia w y:", intersection_y)
+            #print("Punkt przecięcia w x:", intersection_x)
+            #print("Punkt przecięcia w y:", intersection_y)
             return Point(intersection_x, intersection_y)
     except:
         return None
