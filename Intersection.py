@@ -47,7 +47,7 @@ def get_intersection_point(A,B,C,D):
     s1_y = B.y - A.y
     s2_y = D.y - C.y
 
-    if(s1_y == 0 or s2_y == 0):
+    if(s1_y == 0 and s2_y == 0):
         print("Linie na siebie nachodzą")
         return None
     try:
@@ -71,8 +71,8 @@ p2 = Point(49, 1)
 p3 = Point(36, 1)
 p4 = Point(12, 7)
 
-if(are_intersecting(p1,p2,p3,p4)):
+"""if(are_intersecting(p1,p2,p3,p4)):
     print("Przecinaja sie")
     get_intersection_point(p1,p2,p3,p4)
 else:
-    print("Nie przecinaja sie")
+    print("Nie przecinaja sie")"""

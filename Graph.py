@@ -21,7 +21,7 @@ class Graph:
         plt.plot([point1.x, point2.x], [point1.y, point2.y], '-k')
 
     def createPoint(self, point):
-        plt.scatter(point.x, point.y)
+        plt.scatter(point.x, point.y, s=10, marker='o', c='r', zorder=200)
 
     def createGraphFromData(self):
         for line in self.data:

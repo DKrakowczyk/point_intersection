@@ -68,7 +68,8 @@ class GUI:
         self.pointsColumn = [
             [
                 sg.Frame('Points', self.frame_layout, font='Any 14')],
-            [sg.Button('Update', size=(20, 1)), sg.Button('Clear', size=(9, 1))]
+            [sg.Button('Update', size=(20, 1)), sg.Button('Clear', size=(9, 1))],
+            [sg.Button('Example', size=(20,1), key="Example", enable_events=True)]
         ]
 
     def setGraphColumn(self, graph):
@@ -92,4 +93,6 @@ class GUI:
                 break
             if event == '-IN-' and values['-IN-'] and values['-IN-'][-1] not in ('-0123456789.'):
                 window['-IN-'].update(values['-IN-'][:-1])
+            if event == "Example":
+                print("RHFED")
         window.close()
