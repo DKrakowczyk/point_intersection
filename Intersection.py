@@ -10,9 +10,9 @@ def calculate_vector(p1, p2, p3):
 
 def round_val(val):
     if(val % 1 >= 0.5):
-        return math.ceil(val)
+        return val
     else:
-        return math.floor(val)
+        return val
 
 def check_assigment(p1, p2, p3):
     first_condition = min(p1.x, p2.x) <= p3.x and p3.x <= max(p1.x, p2.x)
@@ -49,16 +49,21 @@ def get_intersection_point(A,B,C,D):
 
     if(s1_y == 0 or s2_y == 0):
         print("Linie na siebie nachodzą")
-        return
+        return None
+    try:
+        s = (-s1_y * (A.x - C.x) + s1_x * (A.y - C.y)) / (-s2_x * s1_y + s1_x * s2_y)
+        t = (s2_x * (A.y - C.y) - s2_y * (A.x - C.x)) / (-s2_x * s1_y + s1_x * s2_y)
 
-    s = (-s1_y * (A.x - C.x) + s1_x * (A.y - C.y)) / (-s2_x * s1_y + s1_x * s2_y)
-    t = (s2_x * (A.y - C.y) - s2_y * (A.x - C.x)) / (-s2_x * s1_y + s1_x * s2_y)
-    
-    if (s >= 0 and s <= 1 and t >= 0 and t <= 1):
-        intersection_x = round_val(A.x + (t * s1_x))
-        intersection_y = round_val(A.y + (t * s1_y))
-        print("Punkt przecięcia w x:", intersection_x)
-        print("Punkt przecięcia w y:", intersection_y)
+        if (s >= 0 and s <= 1 and t >= 0 and t <= 1):
+            intersection_x = round_val(A.x + (t * s1_x))
+            intersection_y = round_val(A.y + (t * s1_y))
+            print("Punkt przecięcia w x:", intersection_x)
+            print("Punkt przecięcia w y:", intersection_y)
+            return Point(intersection_x, intersection_y)
+    except:
+        return None
+
+
 
 
 p1 = Point(2, 6)
