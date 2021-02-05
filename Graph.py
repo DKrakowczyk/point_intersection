@@ -25,7 +25,7 @@ class Graph:
         plt.plot([point1.x, point2.x], [point1.y, point2.y], '-k')
 
     def createOverridingLine(self, point1, point2):
-        plt.plot([point1.x, point2.x], [point1.y, point2.y], '-r')
+        plt.plot([point1.x, point2.x], [point1.y, point2.y], '-o')
 
     def createPoint(self, point):
         plt.scatter(point.x, point.y, s=10, marker='o', c='r', zorder=200)
@@ -57,7 +57,6 @@ class Graph:
                                 point2_y = point[1].y
                                 self.gui.addIntersectionValue(f'Linie: Linia{line1[0]}, Linia{line2[0]} nachodza na siebie, wspolrzedne odcinka: [(x:{point1_x} y:{point1_y}), (x:{point2_x} y:{point2_y})]')
                                 self.createOverridingLine(point[0], point[1])
-                        # self.gui.intersectionValues.clear()
                         
     def returnGraph(self):
         buffer = io.BytesIO()

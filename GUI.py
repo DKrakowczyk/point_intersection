@@ -69,7 +69,7 @@ class GUI:
 
     def addIntersectionValue(self, value):
         self.intersectionValues.append(value)
-            
+
     def setLayout(self):
         self.layout = [
         [sg.Column(self.title)],
@@ -79,8 +79,8 @@ class GUI:
 
     def renderWindow(self):
         window = sg.Window('Intersection', self.layout, size=(1000, 600))
-        # Event Loop to process "events" and get the "values" of the inputs
-        while True:  # Event Loop
+
+        while True:
             event, values = window.read()
             if event in (None, 'Exit'):
                 break
@@ -108,6 +108,9 @@ class GUI:
                     window.find_element(f'-IN-p{i}_4').Update(data[j][1].y)
                     j += 1
             if event == "Clear":
+                self.intersectionValues.clear()
+                window.find_element('-LIST-').Update(values=self.intersectionValues)
+                window.find_element('-IMAGE-').Update(data=None)
                 for i in range(1, 11):
                     window.find_element(f'-IN-p{i}_1').Update("")
                     window.find_element(f'-IN-p{i}_2').Update("")
