@@ -26,7 +26,7 @@ class GUI:
 
     def setTitle(self):
         self.title = [
-            [sg.Text("Intersection calculator", justification='center', size=(100, 1), font=('Arial', 16))]
+            [sg.Text("Intersection", justification='center', size=(100, 1), font=('Arial', 16))]
         ]
 
     def setFrameLayout(self):
