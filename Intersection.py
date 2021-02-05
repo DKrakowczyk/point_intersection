@@ -8,7 +8,7 @@ def calculate_vector(p1, p2, p3):
     y2 = p2.y - p1.y
     return x1*y2 - x2*y1
 
-def check_assigment(p1, p2, p3):
+def check_assignment(p1, p2, p3):
     check_x_axis = min(p1.x, p2.x) <= p3.x and p3.x <= max(p1.x, p2.x)
     check_y_axis = min(p1.y, p2.y) <= p3.y and p3.y <= max(p1.y, p2.y)
     return check_x_axis and check_y_axis
@@ -25,10 +25,10 @@ def are_intersecting(A, B, C, D):
     if((v1>0 and v2<0 or v1<0 and v2>0) and (v3>0 and v4<0 or v3<0 and v4>0)):
         return 1
 	
-    if(v1 == 0 and check_assigment(C, D, A)): return 1
-    if(v2 == 0 and check_assigment(C, D, B)): return 1
-    if(v3 == 0 and check_assigment(A, B, C)): return 1
-    if(v4 == 0 and check_assigment(A, B, D)): return 1
+    if(v1 == 0 and check_assignment(C, D, A)): return 1
+    if(v2 == 0 and check_assignment(C, D, B)): return 1
+    if(v3 == 0 and check_assignment(A, B, C)): return 1
+    if(v4 == 0 and check_assignment(A, B, D)): return 1
     else: return 0
 
 
@@ -43,10 +43,10 @@ def get_intersection_point(A,B,C,D):
         v4 = calculate_vector(A, B, D)
 
         arr = []
-        if(v1 == 0 and check_assigment(C, D, A)): arr.append(A)
-        if(v2 == 0 and check_assigment(C, D, B)): arr.append(B)
-        if(v3 == 0 and check_assigment(A, B, C)): arr.append(C)
-        if(v4 == 0 and check_assigment(A, B, D)): arr.append(D)
+        if(v1 == 0 and check_assignment(C, D, A)): arr.append(A)
+        if(v2 == 0 and check_assignment(C, D, B)): arr.append(B)
+        if(v3 == 0 and check_assignment(A, B, C)): arr.append(C)
+        if(v4 == 0 and check_assignment(A, B, D)): arr.append(D)
         return arr
     try:
         t = t0/t1
