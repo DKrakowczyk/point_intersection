@@ -32,14 +32,14 @@ class GUI:
     def setFrameLayout(self):
         self.frame_layout = []
         for i in range(1, 11):
-            row = [sg.Text(f'Line {i} ->', size=(8, 1), justification='center', pad=(0,4)),
-                   sg.Text('Point 1', justification='center', pad=(0,4)),
+            row = [sg.Text(f'Odcinek {i} ->', size=(9, 1), justification='center', pad=(0,4)),
+                   sg.Text('Punkt 1', justification='center', pad=(0,4)),
                    sg.Text("( X:", pad=(0, 4)),
              sg.InputText(size=(4, 1), key=f'-IN-p{i}_1', enable_events=True, pad=(0,4)),
              sg.Text("Y:", pad=(0, 4)),
                    sg.InputText(size=(4, 1), key=f'-IN-p{i}_2', enable_events=True, pad=(0,4)),
                    sg.Text(")", pad=(0, 4)),
-             sg.Text('Point 2', size=(8, 1), justification='center', pad=(0,4)),
+             sg.Text('Punkt 2', size=(8, 1), justification='center', pad=(0,4)),
                    sg.Text("( X:", pad=(0, 4)),
              sg.InputText(size=(4, 1), key=f'-IN-p{i}_3', enable_events=True, pad=(0,4)),
              sg.Text("Y:", pad=(0, 4)),
@@ -78,7 +78,7 @@ class GUI:
         ]
 
     def renderWindow(self):
-        window = sg.Window('Intersection', self.layout, size=(1000, 600))
+        window = sg.Window('Intersection', self.layout, size=(1300, 700))
 
         while True:
             event, values = window.read()

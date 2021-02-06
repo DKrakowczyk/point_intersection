@@ -8,11 +8,13 @@ def calculate_vector(p1, p2, p3):
     y2 = p2.y - p1.y
     return x1*y2 - x2*y1
 
+# Metoda sprawdzająca czy koniec odcinka zawiera się w drugim odcinku
 def check_assignment(p1, p2, p3):
     check_x_axis = min(p1.x, p2.x) <= p3.x and p3.x <= max(p1.x, p2.x)
     check_y_axis = min(p1.y, p2.y) <= p3.y and p3.y <= max(p1.y, p2.y)
     return check_x_axis and check_y_axis
 
+# Metoda sprawdzająca czy linie się przecinają
 def are_intersecting(A, B, C, D):
     v1 = calculate_vector(C, D, A)
     v2 = calculate_vector(C, D, B)
@@ -31,7 +33,7 @@ def are_intersecting(A, B, C, D):
     if(v4 == 0 and check_assignment(A, B, D)): return 1
     else: return 0
 
-
+# Metoda wyznaczająca punkt przecięcia odcinków - zwraca punkt lub tablicę punktów (jezeli odcinki zawiera sie w sobie)
 def get_intersection_point(A,B,C,D):
     t0 = (C.x-A.x)*(D.y-C.y)-(C.y-A.y)*(D.x-C.x)
     t1 =(B.x-A.x)*(D.y-C.y)-(B.y-A.y)*(D.x-C.x)
